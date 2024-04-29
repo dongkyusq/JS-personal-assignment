@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    
+    background-color: lightskyblue;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+
+.head{
+    width: 100vh;
+    height: 80px;
+    background-color: bisque;
+    font-size: 40px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.movieSearch{
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#buttons{
+    cursor: pointer;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+.card{
+    width: 250px;
+    height: 600px;
+    background-color: bisque;
+    margin: 40px 150px auto;
+    border-radius: 3%;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.overview {
+    margin-top: 5px;
+    overflow: auto; 
+    max-height: 170px; 
+}
+
+.vote_average{
+    margin-top: 5px;
+    color:darkslategray;
+}
+
+.poster_path img {
+    width: 100%; 
+    height: auto; 
+}
