@@ -14,49 +14,16 @@
         </header>
         <nav>
             <div class="movieSearch">
-                <span>영화 검색 : 
-                    <input type="search" placeholder="영화 제목을 입력하세요." id="searchs">
-                    <input type="button" value="검색" id="buttons">
-                </span>
+                <form id="search-form">영화 검색 : 
+                    <input required type="text" placeholder="영화 제목을 입력하세요.">
+                    <input type="submit" value="검색">
+                </form>
             </div>
         </nav>
         <main class="list">
            
         </main>   
     </div>
-    <script>
-        const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTgzNTMzYjk2MGZjOTFjMTFhZmYwMTA2NzNlNDlmNCIsInN1YiI6IjY2MjhkNTYyNjNkOTM3MDE4Nzc2YjIyZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cFDpQWG2YeY-xRq3te39JSVuLFpGb09gYFLlTymcb_A'
-            }
-        };
-
-        fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-        .then(response => response.json())
-        .then(response => {
-            const movies = response.results;
-            const list = document.querySelector('.list');
-
-            movies.forEach(movie => {
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.innerHTML = `
-                    <div class="poster_path">
-                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-                    </div>
-                    <div class="title">${movie.title}</div>
-                    <div class="overview">${movie.overview}</div>
-                    <div class="vote_average">${movie.vote_average}</div>
-                `;
-                card.addEventListener('click', () => {
-                    alert(`영화 ID: ${movie.id}`);
-                });
-                list.appendChild(card);
-            });
-        })
-        .catch(err => console.error(err));
-    </script>
+    <script src="./sc.js"></script>
 </body>
 </html>
